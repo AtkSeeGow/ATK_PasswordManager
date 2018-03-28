@@ -4,5 +4,12 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_add_content">Add Content</string>
+    <string name="action_save_to_local">Save To Local</string>
+    <string name="action_save_to_nfc">Save To NFC</string>
+
+    <string name="title_activity_file_list">File List</string>
+    <string name="title_activity_content_information">Content Information</string>
+    <string name="title_activity_cloud_upload">Cloud Upload</string>
+    <string name="title_activity_cloud_download">Cloud Download</string>
 </resources>

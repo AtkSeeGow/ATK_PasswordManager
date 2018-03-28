@@ -9,25 +9,21 @@ import javax.crypto.spec.SecretKeySpec;
 public class AlgorithmAESUtility {
 
     public static String Encryption(String key, String value) throws Exception{
-        String result = value;
-
         SecretKeySpec secretKeySpec = AlgorithmAESUtility.GetSecretKeySpec(key);
 
         Cipher cipher = Cipher.getInstance("AES");
         cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec);
 
-        return Base64.encodeToString(cipher.doFinal(value.getBytes()),Base64.DEFAULT);
+        return Base64.encodeToString(cipher.doFinal(value.getBytes()),Base64.NO_WRAP);
     }
 
     public static String Decryption(String key, String value) throws Exception{
-        String result = value;
-
         SecretKeySpec secretKeySpec = AlgorithmAESUtility.GetSecretKeySpec(key);
 
         Cipher cipher = Cipher.getInstance("AES");
         cipher.init(Cipher.DECRYPT_MODE, secretKeySpec);
 
-        byte[] decryptionValue = cipher.doFinal(Base64.decode(value, Base64.DEFAULT));
+        byte[] decryptionValue = cipher.doFinal(Base64.decode(value, Base64.NO_WRAP));
         return new String(decryptionValue);
     }
 
